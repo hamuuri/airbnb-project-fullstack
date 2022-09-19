@@ -48,6 +48,21 @@ require('./express-sessions')(app)
 
 // ::::
 // Create your routes here
+app.get('/auth', (req, res) => {
+  res.render('login', 'signup')
+})
+app.get('/profile', (req, res) => {
+  res.render('profile')
+})
+app.get('/houses', (req, res) => {
+  res.render('houses')
+})
+app.get('/bookings', (req, res) => {
+  res.send('bookings')
+})
+app.get('/reviews', (req, res) => {
+  res.send('reviews')
+})
 // ::::
 
 // Catch 404 and forward to error handler
