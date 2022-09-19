@@ -7,5 +7,9 @@ router.get('/', (req, res) => {
   res.send('Hello from reviews')
 })
 
+//nested controllers
+router.post('/', (req, res) => {
+  res.render('../views')
+})
 // Export module
 module.exports = router
