@@ -1,6 +1,7 @@
 //import packages
 const express = require('express')
 const router = express.Router()
+const Users = require('../models/users')
 
 //create a get request
 // router.get('/', (req, res) => {
@@ -18,7 +19,8 @@ router.post('/login', (req, res) => {
   res.render('login')
 })
 router.post('/signup', (req, res) => {
-  res.render('signup')
+  console.log(req.body)
+  Users.create(req.body)
 })
 router.get('/logout', (req, res) => {
   res.render('logout')
