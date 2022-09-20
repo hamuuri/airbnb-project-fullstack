@@ -1,1 +1,63 @@
-hello!!!!
+  <body>
+    <div class=“container mb-5">
+				<!-- top nav with logo and login info  -->
+      <nav class=“row my-3”>
+        <div id=“logo” class=“col”>
+          <img style=“width: 150px” src=“images/logo-airbnb.png” />
+        </div>
+        <div id=“account-info” class=“container col text-end”>
+          <div id=“user” class=“btn btn-light btn-outline-secondary”>
+            <img
+              style=“border-radius: 100%; width: 15px”
+              src=“https://randomuser.me/api/portraits/men/11.jpg”
+            />
+            Mohammed
+          </div>
+          <div id=“logout” class=“btn btn-light btn-outline-secondary”>
+            Logout
+          </div>
+        </div>
+      </nav>
+      <!-- main form below  -->
+      <h2 class=“pt-4">List a House</h2>
+      <form>
+        <div class=“input-group mb-3 row”>
+          <label class=“form-label”>Short Title</label>
+          <input type=“text” class=“form-control” />
+        </div>
+        <div class=“input-group mb-3 row”>
+          <label class=“form-label”>Description</label>
+          <textarea type=“text” rows=“5" class=“form-control”></textarea>
+        </div>
+        <div class=“input-group mb-3 row”>
+          <label class=“form-label”>Number of Rooms</label>
+          <input type=“number” class=“form-control” />
+        </div>
+        <div class=“input-group mb-3 row”>
+          <label class=“form-label”>Location</label>
+          <select class=“form-select”>
+            <option name=“location”>Koh Samui</option>
+            <option name=“location”>Koh Phangan</option>
+            <option name=“location”>Bangkok</option>
+          </select>
+        </div>
+        <div class=“input-group mb-3 row”>
+            <label class=“form-label”>Price Per Night</label>
+            <input type=“text” class=“form-control” />
+          </div>
+          <div class=“input-group mb-3 row”>
+            <label class=“form-label”>Add Photos (up to 9)</label>
+            <div class=“mt-2"><input type=“text” class=“form-control row” placeholder=“http://“/></div>
+            <div class=“mt-2”><input type=“text” class=“form-control row” placeholder=“http://“/></div>
+            <div class=“mt-2”><input type=“text” class=“form-control row” placeholder=“http://“/></div>
+            <div class=“mt-2”><input type=“text” class=“form-control row” placeholder=“http://“/></div>
+            <div class=“mt-2”><input type=“text” class=“form-control row” placeholder=“http://“/></div>
+            <div class=“mt-2”><input type=“text” class=“form-control row” placeholder=“http://“/></div>
+            <div class=“mt-2”><input type=“text” class=“form-control row” placeholder=“http://“/></div>
+            <div class=“mt-2”><input type=“text” class=“form-control row” placeholder=“http://“/></div>
+            <div class=“mt-2”><input type=“text” class=“form-control row” placeholder=“http://“/></div>
+          </div>
+          <button class=“btn btn-success”>Submit</button>
+      </form>
+    </div>
+  </body>

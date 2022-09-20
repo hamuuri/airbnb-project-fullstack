@@ -9,7 +9,7 @@ const router = express.Router()
 
 //nested controllers
 router.get('/', (req, res) => {
-  res.render('')
+  res.render('profile')
 })
 router.patch('/', (req, res) => {
   res.render('')
