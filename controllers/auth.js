@@ -18,8 +18,20 @@ router.get('/signup', (req, res) => {
 router.post('/login', (req, res) => {
   res.render('login')
 })
-router.post('/signup', (req, res) => {
-  console.log(req.body)
+router.post('/signup', async (req, res, next) => {
+  try {
+    let foundUsers = await Users.find({
+      email: req.body.email
+    })
+
+    if (foundUsers.length > 0) {
+      throw new Error('User with this email already exists')
+    }
+  } catch (err) {
+    next(err)
+    return
+  }
+
   const newUser = Users.create(req.body)
   req.login(newUser, error => {
     if (!error) res.redirect('/houses')
