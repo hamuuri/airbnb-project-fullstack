@@ -4,12 +4,12 @@ const router = express.Router()
 
 //create a get request
 router.get('/', (req, res) => {
-  res.send('Hello from reviews')
+  res.send('')
 })
 
 //nested controllers
 router.post('/', (req, res) => {
-  res.render('../views')
+  res.render('')
 })
 // Export module
 module.exports = router

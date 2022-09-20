@@ -3,26 +3,35 @@ const express = require('express')
 const router = express.Router()
 
 //create a get request
-router.get('/', (req, res) => {
-  res.send('Hello from login')
-})
+// router.get('/', (req, res) => {
+//   res.send('Hello from login')
+// })
 
 // nested controllers
-router.get('/', (req, res) => {
-  res.render('../views/login')
+router.get('/login', (req, res) => {
+  res.render('login')
 })
-router.get('/', (req, res) => {
-  res.render('../views/signup')
+router.get('/signup', (req, res) => {
+  res.render('signup')
 })
-router.post('/', (req, res) => {
-  res.render('../views/login')
+router.post('/login', (req, res) => {
+  res.render('login')
 })
-router.post('/', (req, res) => {
-  res.render('../views/signup')
+router.post('/signup', (req, res) => {
+  res.render('signup')
 })
-router.get('/', (req, res) => {
-  res.render('../views/logout')
+router.get('/logout', (req, res) => {
+  res.render('logout')
 })
-
+// let foundUser = await users.findOne({
+//   email: req.body.email
+// })
+//
+// if (foundUser) {
+//   console.log('true')
+// } else {
+//   users.create(req.body)
+// }
+// let savedUser =
 // Export module
 module.exports = router

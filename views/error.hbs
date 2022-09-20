@@ -1,2 +1,17 @@
-{{message}}
-{{error.stack}}
+<body>
+	<div class="container">
+		<div class="row my-4">
+			<div class="col">
+				<img src="/images/logo-airbnb.png" style="width:150px" />
+			</div>
+			<div class="col text-end">
+				<a href="#" class="btn btn-outline-secondary">Login</a>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="alert alert-danger mt-3" role="alert" style="width: 1300px">
+			{{message}}
+			{{error.stack}}
+		</div>
+	</div>
