@@ -20,7 +20,10 @@ router.post('/login', (req, res) => {
 })
 router.post('/signup', (req, res) => {
   console.log(req.body)
-  Users.create(req.body)
+  const newUser = Users.create(req.body)
+  req.login(newUser, error => {
+    if (!error) res.redirect('/houses')
+  })
 })
 router.get('/logout', (req, res) => {
   res.render('logout')
