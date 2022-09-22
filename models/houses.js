@@ -6,7 +6,7 @@ module.exports = mongoose.model('houses', {
     required: true
   },
   host: {
-    type: _id,
+    type: ObjectId,
     required: true,
     ref: 'users'
   },

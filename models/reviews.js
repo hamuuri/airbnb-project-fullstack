@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 module.exports = mongoose.model('reviews', {
   author: {
-    type: _id,
+    type: ObjectId,
     required: true,
     ref: 'users'
   },
@@ -16,7 +16,7 @@ module.exports = mongoose.model('reviews', {
     required: true
   },
   house: {
-    type: _id,
+    type: ObjectId,
     required: true,
     ref: 'houses'
   }

@@ -9,7 +9,11 @@ const router = express.Router()
 
 //nested controllers
 router.post('/', (req, res) => {
-  res.render('')
+  if (!req.isAuthenticated()) {
+    res.redirect('/auth/login')
+  } else {
+    res.render('bookings', { user: req.user })
+  }
 })
 
 // Export module

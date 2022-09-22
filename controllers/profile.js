@@ -9,10 +9,18 @@ const router = express.Router()
 
 //nested controllers
 router.get('/', (req, res) => {
-  res.render('profile')
+  if (!req.isAuthenticated()) {
+    res.redirect('/auth/login')
+  } else {
+    res.render('profile', { user: req.user })
+  }
 })
 router.patch('/', (req, res) => {
-  res.render('')
+  if (!req.isAuthenticated()) {
+    res.redirect('/auth/login')
+  } else {
+    res.render('profile', { user: req.user })
+  }
 })
 
 // Export module

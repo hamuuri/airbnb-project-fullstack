@@ -9,7 +9,11 @@ router.get('/', (req, res) => {
 
 //nested controllers
 router.post('/', (req, res) => {
-  res.render('')
+  if (!req.isAuthenticated()) {
+    res.redirect('/auth/login')
+  } else {
+    res.render('reviews', { user: req.user })
+  }
 })
 // Export module
 module.exports = router
