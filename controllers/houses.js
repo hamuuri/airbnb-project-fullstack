@@ -12,7 +12,11 @@ router.get('/', (req, res) => {
   res.render('houses/list')
 })
 router.get('/create', (req, res) => {
-  res.render('houses/create')
+  if (!req.isAuthenticated()) {
+    res.redirect('/auth/login')
+  } else {
+    res.render('houses/create', { user: req.user })
+  }
 })
 router.get('/:id', (req, res) => {
   res.render('houses/one')

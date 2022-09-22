@@ -15,9 +15,31 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
   res.render('signup')
 })
-router.post('/login', (req, res) => {
-  res.render('login')
+router.post('/login', async (req, res, next) => {
+  try {
+    let findUser = await Users.findOne({
+      email: req.body.email,
+      password: req.body.password
+    })
+    console.log(req.body)
+    console.log(findUser)
+
+    if (findUser) {
+      req.login(findUser, error => {
+        if (error) {
+          throw new Error(error)
+        } else {
+          res.redirect('/houses')
+        }
+      })
+    } else {
+      throw new Error('Email or password might be wrong, try again')
+    }
+  } catch (err) {
+    next(err)
+  }
 })
+
 router.post('/signup', async (req, res, next) => {
   try {
     let foundUsers = await Users.find({
@@ -37,8 +59,26 @@ router.post('/signup', async (req, res, next) => {
     if (!error) res.redirect('/houses')
   })
 })
-router.get('/logout', (req, res) => {
-  res.render('logout')
+
+router.get('/logout', (req, res, next) => {
+  try {
+    req.logout(err => {
+      if (err) {
+        throw err
+      }
+
+      req.session.destroy(err => {
+        if (err) {
+          throw err
+        }
+        res.clearCookie('connect.sid')
+      })
+    })
+
+    res.redirect('/auth/login')
+  } catch (err) {
+    next(err)
+  }
 })
 // let foundUser = await users.findOne({
 //   email: req.body.email

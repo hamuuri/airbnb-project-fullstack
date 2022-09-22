@@ -11,11 +11,12 @@
 				<div class="col text-end">
 					<a href="#" class="btn btn-outline-secondary">
 						<img
-							src="https://randomuser.me/api/portraits/men/11.jpg"
 							style="width: 15px; border-radius: 100%"
-						/>Mohammed</a
+						/>{{user.name}}</a
 					>
-					<a href="#" class="btn btn-outline-secondary">Logout</a>
+					<a href="/auth/logout" class="btn btn-outline-secondary">Logout</a>
+					{{else}}
+					<a href="/auth/logout" class="btn btn-outline-secondary">Login</a>
 				</div>
 			</div>
 		</div>
